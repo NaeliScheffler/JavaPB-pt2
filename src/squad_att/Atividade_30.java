@@ -17,7 +17,6 @@ public class Atividade_30 {
         else System.out.println("A frase fornecida não é um palíndromo ");
 
     }
-
     public static boolean palindromo(String frase) {
         // Remove espaços em branco e converte a frase para minúsculas
         String semEspacosMinuscula = frase.replaceAll("\\s", "").toLowerCase();
