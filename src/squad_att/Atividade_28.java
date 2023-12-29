@@ -9,13 +9,20 @@ public class Atividade_28 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Digite um número para calcular o fatorial dele: ");
-        int numero = scanner.nextInt();
+        try {
+            System.out.println("Digite um número para calcular o fatorial dele: ");
+            int numero = scanner.nextInt();
 
-        double resultado = calcularFatorial(numero);
-
-        System.out.println("O fatorial de " + numero + " é: " + resultado);
-}
+            if (numero < 0) {
+                System.out.println("Não existe fatorial de número negativo!!!! Programa encerrado!!!!");
+            } else {
+                double resultado = calcularFatorial(numero);
+                System.out.println("O fatorial de " + numero + " é: " + resultado);
+            }
+        } catch (Exception e) {
+            System.out.println("Entrada inválida!!!! Programa encerrado!!! ");
+        }
+    }
 public static double calcularFatorial(int n) {
     // Fatorial de 0 = 1
     if (n == 0) return 1;

@@ -8,23 +8,35 @@ import java.util.Scanner;
 
 public class Atividade_29 {
     public static void main(String[] args) {
-        Scanner sc =  new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        boolean aux2 = false;
 
-        System.out.println("Insira o número de elementos do vetor: ");
-        int n = sc.nextInt();
-        int[] vetor = new int[n];
-        int aux;
+        int[] vetor = new int[0];
+        try {
+            System.out.println("Insira o número de elementos do vetor: ");
+            int n = sc.nextInt();
+            vetor = new int[n];
+            int aux;
 
-        for(int i = 1; i <= n; i++){
-            System.out.printf("Elemento %d ",i);
-            vetor[i-1] = aux = sc.nextInt();
+            for (int i = 1; i <= n; i++) {
+                System.out.printf("Elemento %d ", i);
+                vetor[i - 1] = aux = sc.nextInt();
+            }
+        } catch (Exception e) {
+            System.out.println("Ocorreu um erro na digitação!!!! Programa encerrado!!!!");
+            aux2 = true;
         }
 
-        System.out.println("Vetor original: " + Arrays.toString(vetor));
+        if (aux2 = false) {
 
-        inverterVetor(vetor);
+            System.out.println("Vetor original: " + Arrays.toString(vetor));
 
-        System.out.println("Vetor invertido: " + Arrays.toString(vetor));
+            inverterVetor(vetor);
+
+            System.out.println("Vetor invertido: " + Arrays.toString(vetor));
+        }
+
+        sc.close();
     }
 
     public static void inverterVetor(int[] vetor) {
